@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#e9e5d9">
+    <meta name="description" content="Observed pipeline health, data validation, drift capability, consistency, and runtime evidence.">
+    <title>Rhombus AI | Pipeline Field Report</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="masthead">
+        <a class="wordmark" href="#top" aria-label="Rhombus field report home">RA<span>/</span>LAB</a>
+        <div class="masthead-caption">Independent ETL evaluation <span>·</span> 2026</div>
+        <div class="live-indicator"><i aria-hidden="true"></i> Evidence-led report</div>
+      </header>
+
+      <main id="top">
+        <section class="hero" aria-labelledby="page-title">
+          <div class="hero-copy">
+            <p class="eyebrow">SCHEDULED PIPELINE / S3 → GCS</p>
+            <h1 id="page-title">Run truth,<br><em>not green lights.</em></h1>
+            <p class="lede">A customer-path evaluation of cleaning, schema drift, semantic drift, and the difference between a successful run and trustworthy data.</p>
+          </div>
+          <aside class="hero-note">
+            <div class="note-label">FIELD NOTE 01</div>
+            <p>Every capability cell reflects a platform run plus independent validation. Prepared fixtures stay marked <strong>untested</strong>.</p>
+            <div class="stamp" id="updated-at">Loading run archive…</div>
+          </aside>
+        </section>
+
+        <section class="metric-grid" aria-label="Evaluation summary">
+          <article class="metric metric-dark"><span>Platform runs</span><strong id="metric-runs">—</strong><small>Unique observed outputs</small></article>
+          <article class="metric"><span>Run status success</span><strong id="metric-success">—</strong><small id="metric-success-note">Platform reported status</small></article>
+          <article class="metric metric-alert"><span>Data checks failed</span><strong id="metric-data-fail">—</strong><small>Output failed independent validation</small></article>
+          <article class="metric"><span>Scenarios exercised</span><strong id="metric-cases">—</strong><small id="metric-cases-note">Platform scenarios only</small></article>
+        </section>
+
+        <section class="section-heading">
+          <div><p class="eyebrow">01 / CAPABILITY MAP</p><h2>What the pipeline handled</h2></div>
+          <p class="section-note">Health and data quality are reported separately.</p>
+        </section>
+        <section class="capability-layout">
+          <div class="scenario-grid" id="scenario-grid" aria-live="polite"></div>
+          <aside class="legend-panel">
+            <h3>Reading the map</h3>
+            <div class="legend-item"><b class="swatch swatch-fail"></b><span><strong>Silent data failure</strong><small>Run succeeded; validation failed.</small></span></div>
+            <div class="legend-item"><b class="swatch swatch-pass"></b><span><strong>Handled</strong><small>Run and independent checks passed.</small></span></div>
+            <div class="legend-item"><b class="swatch swatch-blocked"></b><span><strong>Pipeline failure</strong><small>Execution stopped or timed out.</small></span></div>
+            <div class="legend-item"><b class="swatch swatch-unknown"></b><span><strong>Untested</strong><small>No platform result is archived.</small></span></div>
+            <div class="map-summary" id="map-summary">Loading scenario status…</div>
+          </aside>
+        </section>
+
+        <section class="section-heading section-heading-filter">
+          <div><p class="eyebrow">02 / RUN REGISTER</p><h2>Observed outcomes</h2></div>
+          <label class="filter-label" for="scenario-filter">Filter scenario
+            <select id="scenario-filter"><option value="all">All scenarios</option></select>
+          </label>
+        </section>
+        <section class="run-layout">
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Run</th><th>Scenario</th><th>Platform</th><th>Validation</th><th>Rows</th><th>Failed checks</th></tr></thead>
+              <tbody id="run-table"><tr><td colspan="6">Loading archived reports…</td></tr></tbody>
+            </table>
+          </div>
+          <aside class="run-detail" id="run-detail" aria-live="polite">
+            <p class="eyebrow">SELECT A RUN</p><h3>Run detail</h3><p>Choose a row to inspect the recorded checks and timing.</p>
+          </aside>
+        </section>
+
+        <section class="lower-grid">
+          <article class="data-panel">
+            <p class="eyebrow">03 / REPEATABILITY</p><h2>Same input, same output?</h2>
+            <p class="panel-intro">A consistency claim needs three unique outputs from the same input and recorded pipeline version.</p>
+            <div id="consistency-list" class="consistency-list"></div>
+            <div class="caution-line" id="consistency-note"></div>
+          </article>
+          <article class="data-panel timing-panel">
+            <p class="eyebrow">04 / TIME &amp; RESOURCES</p><h2>Measured, not guessed</h2>
+            <div id="timing-chart" class="timing-chart"></div>
+            <div class="resource-grid" id="resource-summary"></div>
+            <p class="fine-print" id="resource-note"></p>
+          </article>
+        </section>
+
+        <footer class="footer">
+          <span>RHOMBUS AI / FIELD REPORT</span>
+          <span>Raw customer rows, credentials, cloud paths, and object hashes are excluded from this public view.</span>
+          <a href="https://rhombusai.com/" rel="noreferrer">System under test ↗</a>
+        </footer>
+      </main>
+    </div>
+    <noscript>This dashboard needs JavaScript to load the sanitized run summary.</noscript>
+  </body>
+</html>
