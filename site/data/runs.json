@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-09-29T09:34:47.421155+00:00",
+  "generated_at": "2026-09-29T10:21:35.424806+00:00",
   "summary": {
-    "platform_runs": 5,
+    "platform_runs": 6,
     "platform_successes": 5,
-    "platform_failures": 0,
-    "validation_failures": 5,
-    "observed_scenarios": 1,
+    "platform_failures": 1,
+    "validation_failures": 6,
+    "observed_scenarios": 2,
     "total_scenarios": 9,
-    "uncomparable_runs": 5
+    "uncomparable_runs": 6
   },
   "scenarios": [
     {
@@ -110,13 +110,13 @@
       "id": "round-2-messy",
       "label": "Regenerated messy input",
       "family": "additional",
-      "platform_runs": 0,
+      "platform_runs": 1,
       "platform_successes": 0,
-      "platform_failures": 0,
-      "validation_failures": 0,
-      "success_rate": null,
-      "capability": "untested",
-      "median_pipeline_seconds": null
+      "platform_failures": 1,
+      "validation_failures": 1,
+      "success_rate": 0.0,
+      "capability": "pipeline_failure",
+      "median_pipeline_seconds": 2.0
     }
   ],
   "consistency": [],
@@ -128,15 +128,38 @@
       "run_type": "local_validation",
       "platform_status": "not_recorded",
       "validation_status": "passed",
-      "created_at": "2026-09-29T09:27:29.268340+00:00",
+      "created_at": "2026-09-29T10:16:54.240200+00:00",
       "rows_expected": 7,
       "rows_actual": 7,
       "schema_status": "passed",
       "failed_checks": [],
       "pipeline_duration_seconds": null,
       "schedule_detection_seconds": null,
-      "input_bytes": 700,
+      "input_bytes": 689,
       "output_bytes": 479,
+      "provider_resources": "not_exposed",
+      "consistency_eligible": false
+    },
+    {
+      "run_id": "2026-09-29T1957_round2-platform-failure",
+      "scenario_id": "round-2-messy",
+      "scenario_label": "Regenerated messy input",
+      "run_type": "platform",
+      "platform_status": "failed",
+      "validation_status": "failed",
+      "created_at": "2026-09-29T09:57:03+00:00",
+      "rows_expected": null,
+      "rows_actual": null,
+      "schema_status": "failed",
+      "failed_checks": [
+        "determinism",
+        "row_count",
+        "schema"
+      ],
+      "pipeline_duration_seconds": 2.0,
+      "schedule_detection_seconds": null,
+      "input_bytes": 689,
+      "output_bytes": null,
       "provider_resources": "not_exposed",
       "consistency_eligible": false
     },
